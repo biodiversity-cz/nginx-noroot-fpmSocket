@@ -1,7 +1,7 @@
 # nginx-noroot-fpmSocket
 Unprivileged Nginx container with PHP-FPM socket prepared. Listen port 8080, see https://github.com/nginxinc/docker-nginx-unprivileged.
 
-In combination with [second container](https://github.com/krkabol/php-fpm-noroot-socket) provides a set to run PHP-FPM power application at unprivileged Kubernetes cluster settings.
+In combination with the [second container](https://github.com/krkabol/php-fpm-noroot-socket) provides a set to run PHP-FPM power application at unprivileged Kubernetes cluster settings.
 
 Named volume *sock* shares the php-fpm unix socket between both containers.
 
