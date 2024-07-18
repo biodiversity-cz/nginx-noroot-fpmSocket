@@ -25,7 +25,7 @@ services:
     ports:
       - 80:8080
     volumes:
-      - ./app:/var/www/html
+      - ./app:/srv/www
       - sock:/sock
     user: 1000:1000
 
