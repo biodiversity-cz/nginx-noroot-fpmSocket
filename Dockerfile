@@ -1,4 +1,4 @@
-FROM ghcr.io/nginxinc/nginx-unprivileged:bookworm@sha256:d98d0e6a5cd5e5795b3ef2d112240efea63798903d323f3fff2c6451e8a6b02b
+FROM ghcr.io/nginxinc/nginx-unprivileged:bookworm@sha256:f748071e0370188bbbe084d20cd32ee1b7eb3a56e97c4ded4c7fae99bd02ea15
 
 USER root
 RUN useradd -u 1000 -ms /bin/bash www && \
