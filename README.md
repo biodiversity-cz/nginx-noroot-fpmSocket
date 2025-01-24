@@ -1,7 +1,7 @@
 # nginx-noroot-fpmSocket
 Unprivileged Nginx container with PHP-FPM socket prepared. Listen port 8080, see https://github.com/nginxinc/docker-nginx-unprivileged.
 
-In combination with the [second container](https://github.com/krkabol/php-fpm-noroot-socket) provides a set to run PHP-FPM powered application in an unprivileged Kubernetes cluster settings. The paths are fitted to the [Nette Framework](https://nette.org/) habits.
+In combination with the [second container](https://github.com/biodiversity-cz/php-fpm-noroot-socket) provides a set to run PHP-FPM powered application in an unprivileged Kubernetes cluster settings. The paths are fitted to the [Nette Framework](https://nette.org/) habits.
 
 Derived from [Dockette](https://github.com/dockette/web) (with a single and privileged container) and Matthew Palmer [article](https://matthewpalmer.net/kubernetes-app-developer/articles/php-fpm-nginx-kubernetes.html) (using tcp socket instead of unix php-fpm).
 
@@ -13,14 +13,14 @@ Add test script *index.php* into the mounted folder ./app with content ```<?php 
 version: '3'
 services:
   php-fpm:
-    image: ghcr.io/krkabol/php-fpm-noroot-socket:main
+    image: ghcr.io/biodiversity-cz/php-fpm-noroot-socket:main
     volumes:
       - ./app:/srv/www
       - sock:/sock
     user: 1000:1000
 
   nginx:
-    image: ghcr.io/krkabol/nginx-noroot-fpmsocket:main
+    image: ghcr.io/biodiversity-cz/nginx-noroot-fpmsocket:main
     depends_on:
       - php-fpm
     ports:
@@ -58,7 +58,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: php
-          image: xxx #image derived from ghcr.io/krkabol/php-fpm-noroot-socket:main - in the Dockerfile is your app  COPY to /app (!), see Palmer's article
+          image: xxx #image derived from ghcr.io/biodiversity-cz/php-fpm-noroot-socket:main - in the Dockerfile is your app  COPY to /app (!), see Palmer's article
           imagePullPolicy: Always
           securityContext:
             allowPrivilegeEscalation: false
@@ -75,7 +75,7 @@ spec:
               exec:
                 command: [ "/bin/sh", "-c", "cp -r /app/. /srv" ]
         - name: nginx
-          image: ghcr.io/krkabol/nginx-noroot-fpmsocket:main
+          image: ghcr.io/biodiversity-cz/nginx-noroot-fpmsocket:main
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
