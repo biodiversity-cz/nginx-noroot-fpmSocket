@@ -1,4 +1,4 @@
-FROM ghcr.io/nginxinc/nginx-unprivileged:bookworm@sha256:76fb15abad2b5d5f71c5c0de087c364050eb318255797bf855990e36cea24a1c
+FROM ghcr.io/nginxinc/nginx-unprivileged:bookworm@sha256:7a76302625f26fd9ea82da99c0e14c5f4def3a839b21e4138acdcbefc790219f
 
 MAINTAINER Petr Novotný <novotp@natur.cuni.cz>
 LABEL org.opencontainers.image.source=https://github.com/biodiversity-cz/nginx-noroot-fpmSocket
