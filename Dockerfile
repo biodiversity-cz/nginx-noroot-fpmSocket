@@ -12,3 +12,4 @@ RUN useradd -u 1000 -ms /bin/bash www && \
 USER www
 
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY custom_locations.conf /etc/nginx/conf.d/custom_locations.conf
