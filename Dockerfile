@@ -11,5 +11,6 @@ RUN useradd -u 1000 -ms /bin/bash www && \
     chown -R www:www /sock /srv
 USER www
 
+COPY main.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY custom_locations.conf /etc/nginx/includes/custom_locations.conf
