@@ -3,7 +3,7 @@ Unprivileged Nginx container with PHP-FPM socket prepared. Listen port 8080, see
 
 In combination with the [second container](https://github.com/biodiversity-cz/php-fpm-noroot-socket) provides a set to run PHP-FPM powered application in an unprivileged Kubernetes cluster settings. The paths are fitted to the [Nette Framework](https://nette.org/) habits.
 
-Derived from [Dockette](https://github.com/dockette/web) (with a single and privileged container) and Matthew Palmer [article](https://matthewpalmer.net/kubernetes-app-developer/articles/php-fpm-nginx-kubernetes.html) (using tcp socket instead of unix php-fpm).
+Derived from [Dockette](https://github.com/dockette/web) (with a single and privileged container) and Matthew Palmer [article](https://matthewpalmer.net/kubernetes-app-developer/articles/php-fpm-nginx-kubernetes.html) (using tcp socket instead of unix php-fpm). Only 4xx/5xx logged in default settings.
 
 ## Docker-compose
 Named volume *sock* shares the php-fpm unix socket between both containers.
