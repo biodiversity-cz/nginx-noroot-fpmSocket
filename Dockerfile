@@ -8,7 +8,8 @@ USER root
 RUN useradd -u 1000 -ms /bin/bash www && \
     usermod -aG nginx www && \
     mkdir /sock && \
-    chown -R www:www /sock /srv
+    chown -R www:www /sock /srv && \
+    chmod -R 777 /sock
 USER www
 
 COPY main.conf /etc/nginx/nginx.conf
