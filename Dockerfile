@@ -15,3 +15,5 @@ USER www
 COPY main.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY custom_locations.conf /etc/nginx/includes/custom_locations.conf
+
+COPY --chown=www:www maintenance.html /var/www/html/maintenance.html
