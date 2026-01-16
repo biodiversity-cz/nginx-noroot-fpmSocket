@@ -8,11 +8,10 @@ USER root
 RUN useradd -u 1000 -ms /bin/bash www && \
     usermod -aG nginx www && \
     mkdir -p /sock  /var/www/html && \
-    chown -R www:www /sock /var/www/html
+    chown -R www:www /sock /srv /var/www/html && \
+    chmod -R 777 /sock
 USER www
 
 COPY main.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY custom_locations.conf /etc/nginx/includes/custom_locations.conf
-
-COPY --chown=www:www maintenance.html /var/www/html/maintenance.html
