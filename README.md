@@ -102,12 +102,10 @@ trigger maintenance
 docker exec -u www container_name touch /var/www/html/maintenance.flag
 ```
 
-get bakc to standard
+get back to standard
 ```shell
 docker exec -u www container_name rm /var/www/html/maintenance.flag
 ```
-
-
 
 [//]: # (obligatory branding for EOSC.CZ)
 <hr style="margin-top: 100px; margin-bottom: 20px">

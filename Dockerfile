@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.description="no root NGINX with prepared UNIX soc
 USER root
 RUN useradd -u 1000 -ms /bin/bash www && \
     usermod -aG nginx www && \
-    mkdir -p /sock  /var/www/html && \
+    mkdir -p /sock /var/www/html && \
     chown -R www:www /sock /srv /var/www/html && \
     chmod -R 777 /sock
 USER www
