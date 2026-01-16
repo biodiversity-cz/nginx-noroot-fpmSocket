@@ -94,3 +94,15 @@ spec:
         - name: shared-socket
           emptyDir: { }
 ```
+
+## Maintenance feature
+
+trigger maintenance
+```shell
+docker exec -u www container_name touch /var/www/html/maintenance.flag
+```
+
+get bakc to standard
+```shell
+docker exec -u www container_name rm /var/www/html/maintenance.flag
+```

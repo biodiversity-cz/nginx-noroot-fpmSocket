@@ -7,10 +7,12 @@ LABEL org.opencontainers.image.description="no root NGINX with prepared UNIX soc
 USER root
 RUN useradd -u 1000 -ms /bin/bash www && \
     usermod -aG nginx www && \
-    mkdir /sock && \
-    chown -R www:www /sock /srv
+    mkdir -p /sock  /var/www/html && \
+    chown -R www:www /sock /var/www/html
 USER www
 
 COPY main.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY custom_locations.conf /etc/nginx/includes/custom_locations.conf
+
+COPY --chown=www:www maintenance.html /var/www/html/maintenance.html
