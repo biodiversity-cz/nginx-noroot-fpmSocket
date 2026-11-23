@@ -1,4 +1,4 @@
-FROM ghcr.io/nginx/nginx-unprivileged:trixie@sha256:0255fc1dcc1d7b358aac20166543e52029fea577413edadb0912f5b928c7e312
+FROM ghcr.io/nginx/nginx-unprivileged:trixie@sha256:4ac6145e433b1adc0880714fe3402680f5e599f1a264148253d6a94a4c000776
 
 MAINTAINER Petr Novotný <novotp@natur.cuni.cz>
 LABEL org.opencontainers.image.source=https://github.com/biodiversity-cz/nginx-noroot-fpmSocket
